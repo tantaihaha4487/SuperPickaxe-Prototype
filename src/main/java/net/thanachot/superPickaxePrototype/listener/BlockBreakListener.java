@@ -39,18 +39,23 @@ public class BlockBreakListener implements Listener {
             return; // เฉพาะ Netherite Pickaxe เท่านั้น
         }
 
-        // ใช้ Paper API เพื่อดึงทิศทางของหน้าบล็อก
+        // inside your BlockBreakListener.onBlockBreak(...)
         Vector face = BlockManager.getBreakingFace(player);
+        if (face == null) face = new Vector(0, 1, 0);
 
-        List<Block> blocks = BlockManager.getAffectedBlocks(center, face);
+        // use size = 5 for 5x5
+        int size = 5;
+        List<Block> blocks = BlockManager.getAffectedBlocks(center, face, size);
         Material centerType = center.getType();
 
         for (Block b : blocks) {
             if (b.equals(center)) continue;
             if (b.getType() == centerType) {
                 activeBlocksBroken.add(key(b));
-                player.breakBlock(b); // Paper API — ทำงานเหมือนผู้เล่นขุดจริง
+                // prefer player.breakBlock(b) on Paper so enchantments & durability apply
+                player.breakBlock(b);
             }
         }
+
     }
 }
