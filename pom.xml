@@ -6,7 +6,7 @@
 
     <groupId>net.thanachot</groupId>
     <artifactId>superpickaxe-prototype</artifactId>
-    <version>1.0.0</version>
+    <version>1.21-1.0.0</version>
     <packaging>jar</packaging>
 
     <name>superpickaxe-prototype</name>
