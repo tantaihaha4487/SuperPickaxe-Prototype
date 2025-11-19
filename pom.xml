@@ -54,22 +54,22 @@
             <artifactId>paper-api</artifactId>
             <version>1.21.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.github.tantaihaha4487.ShiroVerse</groupId>-->
-<!--            <artifactId>ShiroCore</artifactId>-->
-<!--            <version>1.21-1.0.1</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.github.tantaihaha4487</groupId>
+            <artifactId>ShiroVerse</artifactId>
+            <version>1.21-SNAPSHOT</version>
+        </dependency>
 
 
         <!-- Local Dependency-->
-        <dependency>
-            <groupId>net.thanachot</groupId>
-            <artifactId>ShiroCore</artifactId>
-            <version>1.21-1.0.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>net.thanachot</groupId>-->
+<!--            <artifactId>ShiroCore</artifactId>-->
+<!--            <version>1.21-1.0.1</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 </project>
