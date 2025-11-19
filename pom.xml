@@ -28,19 +28,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -55,6 +42,10 @@
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -64,5 +55,21 @@
             <version>1.21.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.github.tantaihaha4487.ShiroVerse</groupId>-->
+<!--            <artifactId>ShiroCore</artifactId>-->
+<!--            <version>1.21-1.0.1</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+
+        <!-- Local Dependency-->
+        <dependency>
+            <groupId>net.thanachot</groupId>
+            <artifactId>ShiroCore</artifactId>
+            <version>1.21-1.0.1</version>
+        </dependency>
+
     </dependencies>
 </project>
