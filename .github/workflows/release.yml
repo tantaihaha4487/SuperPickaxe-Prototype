@@ -9,8 +9,7 @@ permissions:
   security-events: write
 
 env:
-  PROJECT_NAME: SuperPickaxe-Prototype
-  MODULE_NAME: SuperPickaxe-Prototype
+  PROJECT_NAME: superpickaxe-prototype
 
 jobs:
   release:
@@ -35,23 +34,30 @@ jobs:
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
+      - name: Find JAR file
+        id: find_jar
+        run: |
+          JAR_PATH=$(ls target/*.jar | head -n 1)
+          echo "jar_path=$JAR_PATH" >> $GITHUB_OUTPUT
+
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.get_version.outputs.version }}
-          name: Release v${{ steps.get_version.outputs.version }}
+          tag_name: ${{ env.PROJECT_NAME }}-v${{ steps.get_version.outputs.version }}
+          name: ${{ env.PROJECT_NAME }} v${{ steps.get_version.outputs.version }}
           draft: false
           prerelease: false
 
-      - name: Upload ShiroCore JAR
+      - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.MODULE_NAME }}/target/${{ env.MODULE_NAME }}-${{ steps.get_version.outputs.version }}.jar
-          asset_name: ${{ env.MODULE_NAME }}-${{ steps.get_version.outputs.version }}.jar
+          asset_path: ${{ steps.find_jar.outputs.jar_path }}
+          asset_name: ${{ env.PROJECT_NAME }}-v${{ steps.get_version.outputs.version }}.jar
           asset_content_type: application/java-archive
+
