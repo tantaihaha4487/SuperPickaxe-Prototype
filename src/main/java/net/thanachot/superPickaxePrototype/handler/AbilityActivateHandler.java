@@ -48,7 +48,7 @@ public class AbilityActivateHandler {
     public static void handle(BlockBreakEvent event) {
         Player player = event.getPlayer();
 
-        if(!ActivationManager.isActivated(player)) return;
+        if (!ActivationManager.isActivated(player)) return;
 
         Block center = event.getBlock();
         String centerKey = key(center);
@@ -59,7 +59,7 @@ public class AbilityActivateHandler {
 
         // inside your BlockBreakListener.onBlockBreak(...)
         Vector face = BlockManager.getBreakingFace(player);
-        
+
         int size = 3;
         List<Block> blocks = BlockManager.getAffectedBlocks(center, face, size);
         Material centerType = center.getType();

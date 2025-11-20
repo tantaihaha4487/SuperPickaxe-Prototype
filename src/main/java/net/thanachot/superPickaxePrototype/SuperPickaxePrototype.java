@@ -1,6 +1,5 @@
 package net.thanachot.superPickaxePrototype;
 
-import net.thanachot.ShiroCore.listener.ShiftActivationListener;
 import net.thanachot.superPickaxePrototype.handler.RegisterHandler;
 import net.thanachot.superPickaxePrototype.listener.BlockBreakListener;
 import net.thanachot.superPickaxePrototype.listener.PlayerSwapItemListener;

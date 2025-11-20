@@ -21,15 +21,13 @@ public class BlockManager {
             Material.AIR, Material.CAVE_AIR, Material.WATER, Material.LAVA
     );
 
-    public enum Axis { X, Y, Z }
-
-    /* ---------------- Face detection (unchanged) ---------------- */
-
     public static Vector getBreakingFace(Player player) {
         Vector fromTarget = getFaceFromTargetBlocks(player);
         if (fromTarget != null) return fromTarget;
         return getFaceFromLookDirection(player);
     }
+
+    /* ---------------- Face detection (unchanged) ---------------- */
 
     public static Vector getFaceFromTargetBlocks(Player player) {
         List<Block> lastTwo = player.getLastTwoTargetBlocks(TRANSPARENT_MATERIALS, 10);
@@ -53,8 +51,6 @@ public class BlockManager {
         }
     }
 
-    /* ---------------- Refactored affected-blocks ---------------- */
-
     /**
      * Return NxN blocks centred on `center` in the plane perpendicular to `face`.
      * `size` must be an odd integer >= 1 (3 -> 3x3, 5 -> 5x5).
@@ -71,6 +67,8 @@ public class BlockManager {
         return mapOffsetsToBlocks(center, axis, offsets2D);
     }
 
+    /* ---------------- Refactored affected-blocks ---------------- */
+
     // Determine which axis is dominant from the face vector
     private static Axis dominantAxis(Vector face) {
         double ax = Math.abs(face.getX());
@@ -86,10 +84,10 @@ public class BlockManager {
     // Generate 2D offsets for a square with given radius (radius=1 -> offsets -1..1)
     // Offsets include the center (0,0)
     private static List<int[]> generateOffsets2D(int radius) {
-        List<int[]> offsets = new ArrayList<>((2*radius + 1) * (2*radius + 1));
+        List<int[]> offsets = new ArrayList<>((2 * radius + 1) * (2 * radius + 1));
         for (int dy = -radius; dy <= radius; dy++) {
             for (int dx = -radius; dx <= radius; dx++) {
-                offsets.add(new int[] { dx, dy }); // dx, dy pair
+                offsets.add(new int[]{dx, dy}); // dx, dy pair
             }
         }
         return offsets;
@@ -116,4 +114,6 @@ public class BlockManager {
         }
         return list;
     }
+
+    public enum Axis {X, Y, Z}
 }
