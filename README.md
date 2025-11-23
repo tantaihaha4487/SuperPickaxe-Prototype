@@ -1,20 +1,36 @@
-<p align="center">
-  <a href="https://github.com/tantaihaha4487/SuperPickaxe-Prototype/actions/workflows/build-plugin.yml" style="text-decoration:none;"><img src="https://github.com/tantaihaha4487/SuperPickaxe-Prototype/actions/workflows/build-plugin.yml/badge.svg" alt="Build Status"></a>
-  <a href="https://github.com/tantaihaha4487/SuperPickaxe-Prototype/releases/latest" style="text-decoration:none;"><img src="https://img.shields.io/github/v/release/tantaihaha4487/SuperPickaxe-Prototype?style=flat-square" alt="Latest Release"></a>
-</p>
+# SuperPickaxe Prototype
 
-# SuperPickaxe-Prototype
-
-Unleash the power of the ultimate mining tool!
+This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-breaking ability.
 
 ## Features
 
-* **Customizable Mining Speed:** Adjust how fast your SuperPickaxe breaks blocks.
-* **Area-of-Effect Mining:** Break multiple blocks at once with a single swing.
-* **Auto-Smelt Capability:** Automatically smelt mined ores into ingots.
-* **Configurable Durability & Repair:** Define the pickaxe's lifespan and repair methods.
-* **Special Enchantments:** Apply unique and powerful enchantments beyond the vanilla limits.
+- **Super Pickaxe**: A powerful pickaxe capable of breaking a 3x3 area of blocks simultaneously.
+- **Ability Activation**: Activate the Super Pickaxe's special ability by shift-spamming while holding the pickaxe.
+- **Crafting Recipe**: Craft your own Super Pickaxe using three Netherite pickaxes and two sticks.
+- **Recipe Discovery**: The recipe for the Super Pickaxe is automatically discovered by players.
 
-## Requirements
+## Recent Changes (v1.0.1)
 
-* [ShiroCore](https://modrinth.com/plugin/shirocore) (v1.21-1.0.1 or higher)
+- **Reworked Ability System**: The plugin's ability system has been completely overhauled to integrate with the `ShiroCore` API, providing a more robust and streamlined experience.
+- **Removed Old Handlers**: The legacy `AbilityActivateHandler` and `ActivationManager` have been deprecated and removed.
+- **New Recipe Manager**: A `RecipeManager` has been introduced to handle the crafting and discovery of the Super Pickaxe.
+- **Updated Dependencies**: The project's dependencies have been updated to their latest versions.
+
+## How to Use
+
+1. **Craft the Super Pickaxe**:
+   - Open a crafting table.
+   - Place three Netherite pickaxes in the top row.
+   - Place two sticks in the center column below the pickaxes.
+
+   ### Crafting Recipe
+   | ![Netherite Pickaxe](https://minecraft.wiki/images/Netherite_Pickaxe_JE3.png?36cb3) | ![Netherite Pickaxe](https://minecraft.wiki/images/Netherite_Pickaxe_JE3.png?36cb3) | ![Netherite Pickaxe](https://minecraft.wiki/images/Netherite_Pickaxe_JE3.png?36cb3) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://minecraft.wiki/images/Stick_JE1_BE1.png?1fc15) |     |
+   |     | ![Stick](https://minecraft.wiki/images/Stick_JE1_BE1.png?1fc15) |     |
+
+2. **Activate the Ability**:
+   - Hold the Super Pickaxe in your main hand.
+   - Repeatedly press the sneak key (shift by default) to activate the 3x3 breaking ability.
+3. **Break Blocks**:
+   - While the ability is active, breaking a block will also break a 3x3 area of similar blocks around it.
