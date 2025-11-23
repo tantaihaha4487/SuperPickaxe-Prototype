@@ -9,12 +9,9 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
 - **Crafting Recipe**: Craft your own Super Pickaxe using three Netherite pickaxes and two sticks.
 - **Recipe Discovery**: The recipe for the Super Pickaxe is automatically discovered by players.
 
-## Recent Changes (v1.0.1)
+## Mine!
+![](https://github.com/tantaihaha4487/assets/blob/main/SuperpickaxePrototype/superoickaxe-prototye.gif?raw=true)
 
-- **Reworked Ability System**: The plugin's ability system has been completely overhauled to integrate with the `ShiroCore` API, providing a more robust and streamlined experience.
-- **Removed Old Handlers**: The legacy `AbilityActivateHandler` and `ActivationManager` have been deprecated and removed.
-- **New Recipe Manager**: A `RecipeManager` has been introduced to handle the crafting and discovery of the Super Pickaxe.
-- **Updated Dependencies**: The project's dependencies have been updated to their latest versions.
 
 ## How to Use
 
