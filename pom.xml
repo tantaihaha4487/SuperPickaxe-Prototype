@@ -6,7 +6,7 @@
 
     <groupId>net.thanachot</groupId>
     <artifactId>superpickaxe-prototype</artifactId>
-    <version>1.21-1.0.0</version>
+    <version>1.21.10-1.0.1</version>
     <packaging>jar</packaging>
 
     <name>superpickaxe-prototype</name>
@@ -14,6 +14,7 @@
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <server.plugins.folder>${env.HOME}/Minecraft/servers/test-server/plugins/</server.plugins.folder>
     </properties>
 
     <build>
@@ -27,6 +28,26 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <copy file="${project.build.directory}/${project.build.finalName}.jar"
+                                      tofile="${server.plugins.folder}/${project.build.finalName}.jar"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
@@ -52,7 +73,7 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21.8-R0.1-SNAPSHOT</version>
+            <version>1.21.10-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
 
         </dependency>
@@ -60,16 +81,16 @@
         <dependency>
             <groupId>com.github.tantaihaha4487</groupId>
             <artifactId>ShiroVerse</artifactId>
-            <version>1.21-SNAPSHOT</version>
+            <version>1.21.10-SNAPSHOT</version>
         </dependency>
 
 
         <!-- Local Dependency-->
-        <!--        <dependency>-->
-        <!--            <groupId>net.thanachot</groupId>-->
-        <!--            <artifactId>ShiroCore</artifactId>-->
-        <!--            <version>1.21-1.0.1</version>-->
-        <!--        </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>net.thanachot</groupId>-->
+<!--                <artifactId>ShiroCore</artifactId>-->
+<!--                <version>1.21-1.0.2</version>-->
+<!--            </dependency>-->
 
     </dependencies>
 </project>
