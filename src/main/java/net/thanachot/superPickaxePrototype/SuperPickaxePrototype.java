@@ -2,6 +2,7 @@ package net.thanachot.superPickaxePrototype;
 
 import net.thanachot.ShiroCore.api.ability.AbilityManager;
 import net.thanachot.superPickaxePrototype.ability.SuperPickaxeAbility;
+import net.thanachot.superPickaxePrototype.btats.Metrics;
 import net.thanachot.superPickaxePrototype.listener.BlockBreakListener;
 import net.thanachot.superPickaxePrototype.manager.RecipeManager;
 import org.bukkit.NamespacedKey;
@@ -45,6 +46,11 @@ public final class SuperPickaxePrototype extends JavaPlugin {
                 .registerEvents(new net.thanachot.superPickaxePrototype.listener.RecipeDiscoveryListener(), this);
 
         getLogger().info("SuperPickaxe-Prototype enabled successfully!");
+
+
+        // Bstats Metrics
+        int pluginId = 28119;
+        new Metrics(this, pluginId);
     }
 
     @Override

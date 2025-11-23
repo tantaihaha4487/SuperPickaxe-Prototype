@@ -20,18 +20,18 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
 ## How to Use
 
 1. **Craft the Super Pickaxe**:
-   - Open a crafting table.
-   - Place three Netherite pickaxes in the top row.
-   - Place two sticks in the center column below the pickaxes.
+    - Open a crafting table.
+    - Place three Netherite pickaxes in the top row.
+    - Place two sticks in the center column below the pickaxes.
 
    ### Crafting Recipe
-   | ![Netherite Pickaxe](https://minecraft.wiki/images/Netherite_Pickaxe_JE3.png?36cb3) | ![Netherite Pickaxe](https://minecraft.wiki/images/Netherite_Pickaxe_JE3.png?36cb3) | ![Netherite Pickaxe](https://minecraft.wiki/images/Netherite_Pickaxe_JE3.png?36cb3) |
-   |:---:|:---:|:---:|
-   |     | ![Stick](https://minecraft.wiki/images/Stick_JE1_BE1.png?1fc15) |     |
-   |     | ![Stick](https://minecraft.wiki/images/Stick_JE1_BE1.png?1fc15) |     |
+   | ![Netherite](https://cdn.modrinth.com/data/cached_images/2715f654dbda1798d4b96a7e4bb607f4ed3ee680.png)| ![Netherite](https://cdn.modrinth.com/data/cached_images/2715f654dbda1798d4b96a7e4bb607f4ed3ee680.png) | ![Netherite](https://cdn.modrinth.com/data/cached_images/2715f654dbda1798d4b96a7e4bb607f4ed3ee680.png) |
+      |:---:|:---:|:---:|
+   |     | ![Stick](https://cdn.modrinth.com/data/cached_images/809179a125e1d914a3f7e8f5b9798449f30a69fd.png) |     |
+   |     | ![Stick](https://cdn.modrinth.com/data/cached_images/809179a125e1d914a3f7e8f5b9798449f30a69fd.png) |     |
 
 2. **Activate the Ability**:
-   - Hold the Super Pickaxe in your main hand.
-   - Repeatedly press the sneak key (shift by default) to activate the 3x3 breaking ability.
+    - Hold the Super Pickaxe in your main hand.
+    - Repeatedly press the sneak key (shift by default) to activate the 3x3 breaking ability.
 3. **Break Blocks**:
-   - While the ability is active, breaking a block will also break a 3x3 area of similar blocks around it.
+    - While the ability is active, breaking a block will also break a 3x3 area of similar blocks around it.
