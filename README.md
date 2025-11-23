@@ -9,6 +9,10 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
 - **Crafting Recipe**: Craft your own Super Pickaxe using three Netherite pickaxes and two sticks.
 - **Recipe Discovery**: The recipe for the Super Pickaxe is automatically discovered by players.
 
+## Requirements
+
+- **ShiroCore**: This plugin requires [ShiroCore](https://modrinth.com/plugin/shirocore/version/1.21.10-1.0.3) to be installed.
+
 ## Mine!
 ![](https://github.com/tantaihaha4487/assets/blob/main/SuperpickaxePrototype/superoickaxe-prototye.gif?raw=true)
 
