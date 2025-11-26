@@ -1,6 +1,6 @@
 package net.thanachot.superPickaxePrototype.manager;
 
-import net.thanachot.superPickaxePrototype.SuperPickaxePrototype;
+import net.thanachot.superPickaxePrototype.SuperPickaxePlugin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -16,10 +16,10 @@ import java.util.List;
 
 public class RecipeManager {
 
-    public static void registerRecipes(SuperPickaxePrototype plugin) {
+    public static void registerRecipes(SuperPickaxePlugin plugin) {
         ItemStack item = createSuperPickaxeItem();
 
-        NamespacedKey key = SuperPickaxePrototype.getSuperPickaxeKey();
+        NamespacedKey key = SuperPickaxePlugin.getSuperPickaxeKey();
         ShapedRecipe recipe = new ShapedRecipe(key, item);
 
         recipe.shape(
@@ -40,7 +40,7 @@ public class RecipeManager {
 
         if (meta != null) {
             PersistentDataContainer container = meta.getPersistentDataContainer();
-            container.set(SuperPickaxePrototype.getSuperPickaxeKey(), PersistentDataType.BYTE, (byte) 1);
+            container.set(SuperPickaxePlugin.getSuperPickaxeKey(), PersistentDataType.BYTE, (byte) 1);
 
             meta.displayName(Component.text("Super Pickaxe", NamedTextColor.GOLD));
 

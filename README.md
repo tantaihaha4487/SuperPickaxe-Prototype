@@ -11,10 +11,17 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
 
 ## Requirements
 
-- **ShiroCore**: This plugin requires [ShiroCore](https://modrinth.com/plugin/shirocore/version/1.21.10-1.0.3) to be installed.
+<!-- - **ShiroCore**: This plugin requires [ShiroCore](https://github.com/tantaihaha4487/ShiroVerse/releases/tag/v1.21.10-1.0.3) to be installed. -->
+
+- **ShiroCore**: This plugin requires [ShiroCore](https://modrinth.com/plugin/shirocore/version/latest) to be installed.
+
+| Version | ShoCore Version | Required |
+|---|---|---|
+| superpickaxe-prototype 1.21.10-1.0.2| [ShiroCore 1.21.10-1.0.3](https://modrinth.com/plugin/shirocore/version/1.21.10-1.0.3) | true |
+
 
 ## Mine!
-![](https://github.com/tantaihaha4487/assets/blob/main/SuperpickaxePrototype/superoickaxe-prototye.gif?raw=true)
+![Preview](https://github.com/tantaihaha4487/assets/blob/main/SuperpickaxePrototype/superoickaxe-prototye.gif?raw=true)
 
 
 ## How to Use
@@ -35,3 +42,6 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
     - Repeatedly press the sneak key (shift by default) to activate the 3x3 breaking ability.
 3. **Break Blocks**:
     - While the ability is active, breaking a block will also break a 3x3 area of similar blocks around it.
+
+## ⚠️ Warning
+SuperPickaxe recipe still be craftable after removed plugin. It might be cause problem.

@@ -1,8 +1,10 @@
 name: SuperPickaxe-Prototype
 version: ${project.version}
-main: net.thanachot.superPickaxePrototype.SuperPickaxePrototype
+main: net.thanachot.superPickaxePrototype.SuperPickaxePlugin
 api-version: '1.21'
 dependencies:
-  - name: ShiroCore
-    required: true
-    load: BEFORE
+  server:
+    ShiroCore:
+      load: BEFORE
+      required: false
+      version: '>=2.0.0'

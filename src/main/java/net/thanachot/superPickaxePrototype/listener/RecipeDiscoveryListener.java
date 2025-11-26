@@ -1,6 +1,6 @@
 package net.thanachot.superPickaxePrototype.listener;
 
-import net.thanachot.superPickaxePrototype.SuperPickaxePrototype;
+import net.thanachot.superPickaxePrototype.SuperPickaxePlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -13,6 +13,6 @@ public class RecipeDiscoveryListener implements Listener {
         Player player = event.getPlayer();
         // Ensure the player discovers the Super Pickaxe recipe so it appears in the
         // recipe book
-        player.discoverRecipe(SuperPickaxePrototype.getSuperPickaxeKey());
+        player.discoverRecipe(SuperPickaxePlugin.getSuperPickaxeKey());
     }
 }

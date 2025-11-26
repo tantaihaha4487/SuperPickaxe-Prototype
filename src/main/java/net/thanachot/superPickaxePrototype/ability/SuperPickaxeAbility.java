@@ -1,9 +1,9 @@
 package net.thanachot.superPickaxePrototype.ability;
 
 import net.kyori.adventure.text.format.NamedTextColor;
-import net.thanachot.ShiroCore.api.ability.ShiftAbility;
-import net.thanachot.ShiroCore.api.text.ActionbarMessage;
-import net.thanachot.superPickaxePrototype.utils.SuperPickaxeUtils;
+import net.thanachot.shiroverse.api.ability.ShiftAbility;
+import net.thanachot.shiroverse.api.text.ActionbarMessage;
+import net.thanachot.superPickaxePrototype.utils.ItemUtils;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -22,7 +22,7 @@ public class SuperPickaxeAbility extends ShiftAbility {
     private final Set<UUID> activePlayers = new HashSet<>();
 
     public SuperPickaxeAbility() {
-        super("superpickaxe", SuperPickaxeUtils::isSuperPickaxe);
+        super("superpickaxe", ItemUtils::isSuperPickaxe);
     }
 
     @Override
