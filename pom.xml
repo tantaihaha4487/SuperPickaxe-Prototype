@@ -107,7 +107,7 @@
             <groupId>com.github.tantaihaha4487.ShiroVerse</groupId>
             <artifactId>shiro-api</artifactId>
             <version>v1.21.10-2.0.0</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
 

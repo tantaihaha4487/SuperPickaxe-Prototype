@@ -22,7 +22,6 @@ public final class SuperPickaxePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("SuperPickaxe plugin is enabling!");
-
         superPickaxeKey = new NamespacedKey(this, "superpickaxe");
 
         if (!registerAbility()) {
@@ -82,6 +81,7 @@ public final class SuperPickaxePlugin extends JavaPlugin {
             getLogger().info("✓ Registered SuperPickaxe ability with ShiroCore v" + shiroCoreVersion);
             return true;
         } catch (IllegalStateException e) {
+            getLogger().warning(e.toString());
             getLogger().severe("╔════════════════════════════════════════════════════════════╗");
             getLogger().severe("║  ShiroCore API ERROR!                                      ║");
             getLogger().severe("║  Failed to register SuperPickaxe ability.                  ║");
