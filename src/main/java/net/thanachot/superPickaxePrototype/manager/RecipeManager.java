@@ -34,6 +34,14 @@ public class RecipeManager {
         plugin.getServer().getOnlinePlayers().forEach(player -> player.discoverRecipe(key));
     }
 
+    public static void unregisterRecipes(SuperPickaxePlugin plugin) {
+        NamespacedKey key = SuperPickaxePlugin.getSuperPickaxeKey();
+        if (plugin.getServer().removeRecipe(key)) {
+            plugin.getLogger().info("SuperPickaxe recipe unregistered.");
+            plugin.getServer().getOnlinePlayers().forEach(player -> player.undiscoverRecipe(key));
+        }
+    }
+
     private static ItemStack createSuperPickaxeItem() {
         ItemStack item = ItemStack.of(Material.NETHERITE_PICKAXE);
         ItemMeta meta = item.getItemMeta();

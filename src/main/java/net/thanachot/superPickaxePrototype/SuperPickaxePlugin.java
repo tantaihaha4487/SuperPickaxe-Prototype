@@ -7,6 +7,7 @@ import net.thanachot.superPickaxePrototype.listener.BlockBreakListener;
 import net.thanachot.superPickaxePrototype.listener.RecipeDiscoveryListener;
 import net.thanachot.superPickaxePrototype.manager.RecipeManager;
 import org.bukkit.NamespacedKey;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SuperPickaxePlugin extends JavaPlugin {
@@ -40,12 +41,14 @@ public final class SuperPickaxePlugin extends JavaPlugin {
         if (superPickaxeAbility != null) {
             AbilityManager.get().ifPresent(manager -> manager.unregisterAbility(superPickaxeAbility.getId()));
         }
+        RecipeManager.unregisterRecipes(this);
         getLogger().info("SuperPickaxe plugin disabled.");
     }
 
     private boolean registerAbility() {
+        Plugin shiroCore = getServer().getPluginManager().getPlugin("ShiroCore");
         // Check if ShiroCore is loaded
-        if (getServer().getPluginManager().getPlugin("ShiroCore") == null) {
+        if (shiroCore == null) {
             getLogger().severe("╔════════════════════════════════════════════════════════════╗");
             getLogger().severe("║  ShiroCore NOT FOUND!                                      ║");
             getLogger().severe("║  SuperPickaxe-Prototype requires ShiroCore v2.0.0+         ║");
@@ -58,7 +61,7 @@ public final class SuperPickaxePlugin extends JavaPlugin {
         }
 
         // Check ShiroCore version
-        String shiroCoreVersion = getServer().getPluginManager().getPlugin("ShiroCore").getPluginMeta().getVersion();
+        String shiroCoreVersion = shiroCore.getPluginMeta().getVersion();
         if (!shiroCoreVersion.contains("2.0.0")) {
             getLogger().severe("╔════════════════════════════════════════════════════════════╗");
             getLogger().severe("║  INCOMPATIBLE ShiroCore VERSION!                           ║");
