@@ -4,6 +4,7 @@ import net.thanachot.shiroverse.api.ability.AbilityManager;
 import net.thanachot.superPickaxePrototype.ability.SuperPickaxeAbility;
 import net.thanachot.shiroverse.api.bstats.Metrics;
 import net.thanachot.superPickaxePrototype.listener.BlockBreakListener;
+import net.thanachot.superPickaxePrototype.listener.PlayerDeathListener;
 import net.thanachot.superPickaxePrototype.listener.RecipeDiscoveryListener;
 import net.thanachot.superPickaxePrototype.manager.RecipeManager;
 import org.bukkit.NamespacedKey;
@@ -13,10 +14,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class SuperPickaxePlugin extends JavaPlugin {
 
     private static NamespacedKey superPickaxeKey;
-    private SuperPickaxeAbility superPickaxeAbility;
+    private static SuperPickaxeAbility superPickaxeAbility;
 
     public static NamespacedKey getSuperPickaxeKey() {
         return superPickaxeKey;
+    }
+
+    public static SuperPickaxeAbility getSuperPickaxeAbility() {
+        return superPickaxeAbility;
     }
 
     @Override
@@ -99,6 +104,7 @@ public final class SuperPickaxePlugin extends JavaPlugin {
     private void registerListeners() {
         getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
         getServer().getPluginManager().registerEvents(new RecipeDiscoveryListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
     }
 
     private void registerRecipes() {
