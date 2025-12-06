@@ -1,6 +1,7 @@
 package net.thanachot.superPickaxePrototype.handler;
 
-import net.thanachot.shiroverse.api.ability.AbilityManager;
+import net.thanachot.superPickaxePrototype.SuperPickaxePlugin;
+import net.thanachot.superPickaxePrototype.integration.ShiroCoreIntegration;
 import net.thanachot.superPickaxePrototype.manager.AreaMiningManager;
 import net.thanachot.superPickaxePrototype.utils.ItemUtils;
 import org.bukkit.Material;
@@ -9,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.List;
@@ -21,72 +23,90 @@ public class MiningHandler {
 
     private static final Set<String> processingBlocks = new HashSet<>();
 
-    public static void handle(BlockBreakEvent event) {
+    public static void handle(@NotNull BlockBreakEvent event) {
         Player player = event.getPlayer();
         Block centerBlock = event.getBlock();
 
-        // Basic checks
-        if (shouldIgnore(player)) {
-            return;
-        }
-
-        String blockKey = getBlockKey(centerBlock);
-        // If we are already processing this block (triggered by ourselves), ignore to
-        // prevent recursion
-        if (processingBlocks.contains(blockKey)) {
+        if (shouldSkipProcessing(player, centerBlock)) {
             return;
         }
 
         try {
-            // Mark this block as being processed (though for the center block, it's already
-            // broken by the event)
-            // This is mainly to establish the context if needed, but primarily we need to
-            // mark the *other* blocks.
-            // Actually, for the center block, the event is already happening.
-
             processAreaMining(player, centerBlock);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static boolean shouldIgnore(Player player) {
-        ItemStack item = player.getInventory().getItemInMainHand();
-        if (!ItemUtils.isSuperPickaxe(item)) {
+    /**
+     * Determines if we should skip processing for this block break event.
+     */
+    private static boolean shouldSkipProcessing(@NotNull Player player, @NotNull Block block) {
+        // Skip if already processing this block (prevents recursion)
+        if (processingBlocks.contains(createBlockKey(block))) {
             return true;
         }
 
-        return AbilityManager.get()
-                .flatMap(manager -> manager.getActiveAbility(player))
-                .filter(ability -> "superpickaxe".equals(ability.getId()))
-                .isEmpty();
+        // Skip if not using Super Pickaxe
+        ItemStack heldItem = player.getInventory().getItemInMainHand();
+        if (!ItemUtils.isSuperPickaxe(heldItem)) {
+            return true;
+        }
+
+        // Skip if ShiroCore is not enabled
+        if (!SuperPickaxePlugin.isShiroCoreEnabled()) {
+            return true;
+        }
+
+        // Skip if ability is not active for this player
+        try {
+            return !ShiroCoreIntegration.isAbilityActive(player);
+        } catch (NoClassDefFoundError e) {
+            return true;
+        }
     }
 
-    private static void processAreaMining(Player player, Block center) {
-        Vector face = AreaMiningManager.getBreakingFace(player);
-        List<Block> blocks = AreaMiningManager.getAffectedBlocks(center, face, 3);
-        Material targetType = center.getType();
+    private static void processAreaMining(@NotNull Player player, @NotNull Block centerBlock) {
+        Vector breakingFace = AreaMiningManager.getBreakingFace(player);
+        List<Block> affectedBlocks = AreaMiningManager.getAffectedBlocks(centerBlock, breakingFace, 3);
+        Material targetMaterial = centerBlock.getType();
 
-        for (Block block : blocks) {
-            if (block.equals(center))
+        for (Block block : affectedBlocks) {
+            // Skip the center block (already broken by the event)
+            if (block.equals(centerBlock)) {
                 continue;
+            }
 
-            // Only break blocks of the same type
-            if (block.getType() == targetType) {
-                String key = getBlockKey(block);
-                // Mark as processing so the recursive event is ignored
-                if (processingBlocks.add(key)) {
-                    try {
-                        player.breakBlock(block);
-                    } finally {
-                        processingBlocks.remove(key);
-                    }
-                }
+            // Only break blocks of the same material type
+            if (block.getType() == targetMaterial) {
+                breakBlockSafely(player, block);
             }
         }
     }
 
-    private static String getBlockKey(Block block) {
-        return block.getWorld().getUID() + ":" + block.getX() + "," + block.getY() + "," + block.getZ();
+    /**
+     * Safely breaks a block with recursion prevention.
+     */
+    private static void breakBlockSafely(@NotNull Player player, @NotNull Block block) {
+        String blockKey = createBlockKey(block);
+
+        // Only process if not already being processed
+        if (processingBlocks.add(blockKey)) {
+            try {
+                player.breakBlock(block);
+            } finally {
+                processingBlocks.remove(blockKey);
+            }
+        }
+    }
+
+    /**
+     * Creates a unique key for a block based on its world and coordinates.
+     */
+    private static String createBlockKey(@NotNull Block block) {
+        return block.getWorld().getUID() + ":" +
+                block.getX() + "," +
+                block.getY() + "," +
+                block.getZ();
     }
 }

@@ -43,16 +43,4 @@ public class SuperPickaxeAbility extends ShiftAbility {
     public boolean isActive(@NotNull Player player) {
         return activePlayers.contains(player.getUniqueId());
     }
-
-    /**
-     * Forcefully deactivates the ability for a player.
-     * This is useful for cleanup scenarios like player death.
-     * 
-     * @param player the player to deactivate the ability for
-     */
-    public void forceDeactivate(@NotNull Player player) {
-        if (isActive(player)) {
-            onDeactivate(player);
-        }
-    }
 }

@@ -6,4 +6,4 @@ dependencies:
   server:
     ShiroCore:
       load: AFTER
-      required: true
+      required: false
