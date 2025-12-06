@@ -104,21 +104,21 @@
         </dependency>
 
         <!-- JitPack Dependency (remote) -->
-<!--        <dependency>-->
-<!--            <groupId>com.github.tantaihaha4487.ShiroVerse</groupId>-->
-<!--            <artifactId>shiro-api</artifactId>-->
-<!--            <version>v1.21.10-2.0.0</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.github.tantaihaha4487.ShiroVerse</groupId>
+            <artifactId>shiro-api</artifactId>
+            <version>v1.21.10-2.0.1</version>
+            <scope>provided</scope>
+        </dependency>
 
 
         <!-- Local Dependency - Using local build with DependencyLogger -->
-        <dependency>
-            <groupId>net.thanachot</groupId>
-            <artifactId>shiro-api</artifactId>
-            <version>1.21.10-2.0.0</version>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>net.thanachot</groupId>-->
+<!--            <artifactId>shiro-api</artifactId>-->
+<!--            <version>1.21.10-2.0.1</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
 
     </dependencies>
 </project>

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 public final class SuperPickaxePlugin extends JavaPlugin {
 
-    private static final String REQUIRED_SHIROCORE_VERSION = "2.0.0";
+    private static final String REQUIRED_SHIROCORE_VERSION = "2.0.1";
     private static final String SHIROCORE_PLUGIN_NAME = "ShiroCore";
 
     private static NamespacedKey superPickaxeKey;
