@@ -24,14 +24,77 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
     - Place three Netherite pickaxes in the top row.
     - Place two sticks in the center column below the pickaxes.
 
-   ### Crafting Recipe
-   | ![Netherite](https://cdn.modrinth.com/data/cached_images/2715f654dbda1798d4b96a7e4bb607f4ed3ee680.png)| ![Netherite](https://cdn.modrinth.com/data/cached_images/2715f654dbda1798d4b96a7e4bb607f4ed3ee680.png) | ![Netherite](https://cdn.modrinth.com/data/cached_images/2715f654dbda1798d4b96a7e4bb607f4ed3ee680.png) |
-      |:---:|:---:|:---:|
-   |     | ![Stick](https://cdn.modrinth.com/data/cached_images/809179a125e1d914a3f7e8f5b9798449f30a69fd.png) |     |
-   |     | ![Stick](https://cdn.modrinth.com/data/cached_images/809179a125e1d914a3f7e8f5b9798449f30a69fd.png) |     |
+   ### All Pickaxe Variants
+
+   #### Wooden Super Pickaxe
+   | ![Wooden Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_wooden_pickaxe.png) | ![Wooden Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_wooden_pickaxe.png) | ![Wooden Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_wooden_pickaxe.png) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+
+   #### Stone Super Pickaxe
+   | ![Stone Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_stone_pickaxe.png) | ![Stone Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_stone_pickaxe.png) | ![Stone Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_stone_pickaxe.png) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+
+   #### Copper Super Pickaxe
+   | ![Copper Pickaxe](https://minecraft.wiki/images/Copper_Pickaxe_JE1_BE1.png) | ![Copper Pickaxe](https://minecraft.wiki/images/Copper_Pickaxe_JE1_BE1.png) | ![Copper Pickaxe](https://minecraft.wiki/images/Copper_Pickaxe_JE1_BE1.png) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+
+   #### Iron Super Pickaxe
+   | ![Iron Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_iron_pickaxe.png) | ![Iron Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_iron_pickaxe.png) | ![Iron Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_iron_pickaxe.png) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+
+   #### Golden Super Pickaxe
+   | ![Golden Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_golden_pickaxe.png) | ![Golden Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_golden_pickaxe.png) | ![Golden Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_golden_pickaxe.png) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+
+   #### Diamond Super Pickaxe
+   | ![Diamond Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_diamond_pickaxe.png) | ![Diamond Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_diamond_pickaxe.png) | ![Diamond Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_diamond_pickaxe.png) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+
+   #### Netherite Super Pickaxe
+   | ![Netherite Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_netherite_pickaxe.png) | ![Netherite Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_netherite_pickaxe.png) | ![Netherite Pickaxe](https://mc.nerothe.com/img/1.21.11/minecraft_netherite_pickaxe.png) |
+   |:---:|:---:|:---:|
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
+   |     | ![Stick](https://mc.nerothe.com/img/1.21.11/minecraft_stick.png) |     |
 
 2. **Activate the Ability**:
     - Hold the Super Pickaxe in your main hand.
     - Repeatedly press the sneak key (shift by default) to activate the 3x3 breaking ability.
 3. **Break Blocks**:
     - While the ability is active, breaking a block will also break a 3x3 area of similar blocks around it.
+
+## Admin Commands
+
+If you have administrator permissions, you can acquire any variant of the Super Pickaxe using the `/give` command. 
+
+### Generic Command Format (1.20.5+)
+The plugin uses the `PersistentDataContainer`, which Minecraft stores under the `PublicBukkitValues` tag in the `custom_data` component.
+
+```bash
+/give @s <pickaxe_type>[custom_data={"PublicBukkitValues":{"superpickaxe-prototype:superpickaxe":1b}}]
+```
+
+### Examples
+
+**Diamond Super Pickaxe:**
+```bash
+/give @s diamond_pickaxe[custom_data={"PublicBukkitValues":{"superpickaxe-prototype:superpickaxe":1b}}]
+```
+
+**Netherite Super Pickaxe:**
+```bash
+/give @s netherite_pickaxe[custom_data={"PublicBukkitValues":{"superpickaxe-prototype:superpickaxe":1b}}]
+```
+
+*Note: The functionality depends on the internal data tag. The name and lore are optional.*
