@@ -60,10 +60,19 @@ public class MiningHandler {
 
         // Skip if ability is not active for this player
         try {
-            return !ShiroCoreIntegration.isAbilityActive(player);
+            if (!ShiroCoreIntegration.isAbilityActive(player)) {
+                return true;
+            }
         } catch (NoClassDefFoundError e) {
             return true;
         }
+
+        // Ensure the player is actually looking at the block being broken.
+        // This prevents the Super Pickaxe from triggering on secondary blocks
+        // broken by other plugins (like VeinMining), which would otherwise
+        // cause massive durability loss and cascading 3x3 breaks.
+        Block targetBlock = player.getTargetBlockExact(6);
+        return targetBlock == null || !targetBlock.getLocation().equals(block.getLocation());
     }
 
     private static void processAreaMining(@NotNull Player player, @NotNull Block centerBlock) {
