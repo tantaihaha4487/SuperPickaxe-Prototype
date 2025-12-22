@@ -17,6 +17,7 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
 
 | Version | ShoCore Version | Required |
 |---|---|---|
+| Superpickaxe Prototype 1.21.10-1.1.1 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | true |
 | Superpickaxe Prototype 1.21.10-1.1.0 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | true |
 | Superpickaxe Prototype 1.21.10-1.0.4 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | true |
 | superpickaxe-prototype 1.21.10-1.0.2| [ShiroCore 1.21.10-1.0.3](https://modrinth.com/plugin/shirocore/version/1.21.10-1.0.3) | true |
