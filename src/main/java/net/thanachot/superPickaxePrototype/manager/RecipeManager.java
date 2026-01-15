@@ -3,6 +3,7 @@ package net.thanachot.superPickaxePrototype.manager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.thanachot.superPickaxePrototype.SuperPickaxePlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -13,6 +14,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Manager for handling Super Pickaxe recipe registration and item creation.
@@ -35,7 +37,7 @@ public class RecipeManager {
 
     /**
      * Registers all Super Pickaxe crafting recipes with the server.
-     * 
+     *
      * @param plugin the plugin instance
      */
     public static void registerRecipes(@NotNull SuperPickaxePlugin plugin) {
@@ -54,7 +56,7 @@ public class RecipeManager {
 
     /**
      * Unregisters all Super Pickaxe recipes from the server.
-     * 
+     *
      * @param plugin the plugin instance
      */
     public static void unregisterRecipes(@NotNull SuperPickaxePlugin plugin) {
@@ -70,7 +72,7 @@ public class RecipeManager {
 
     /**
      * Discovers all Super Pickaxe recipes for a player.
-     * 
+     *
      * @param player the player
      * @param plugin the plugin instance
      */
@@ -93,7 +95,7 @@ public class RecipeManager {
      */
     @NotNull
     private static ShapedRecipe createCraftingRecipe(@NotNull NamespacedKey key, @NotNull Material material,
-            @NotNull ItemStack resultItem) {
+                                                     @NotNull ItemStack resultItem) {
         ShapedRecipe recipe = new ShapedRecipe(key, resultItem);
 
         recipe.shape(
@@ -117,6 +119,7 @@ public class RecipeManager {
         if (meta != null) {
             markAsSuperPickaxe(meta);
             setDisplayNameAndLore(meta, material);
+            setCustomModel(meta, material);
             item.setItemMeta(meta);
         }
 
@@ -146,6 +149,12 @@ public class RecipeManager {
                 Component.text("break multiple blocks at once.", LORE_COLOR),
                 Component.empty());
         meta.lore(lore);
+    }
+
+    public static void setCustomModel(@NotNull ItemMeta meta, @NotNull Material material) {
+        // Pesource Pack: https://github.com/tantaihaha4487/SuperPickaxeMod/releases/download/v1.21.11-1.0.2/SuperPickaxe_ResourcePack.zip
+        // Example: superpickaxe:superpickaxe_netherite_pickaxe
+        meta.setItemModel(NamespacedKey.fromString("superpickaxe:superpickaxe_" + material.name().toLowerCase()));
     }
 
     /**

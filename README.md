@@ -1,4 +1,4 @@
-# SuperPickaxe Prototype
+# SuperPickaxe Prototype (Required Resource Pack Version)
 
 This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-breaking ability.
 
@@ -15,12 +15,16 @@ This Minecraft plugin introduces a "Super Pickaxe" with a special 3x3 block-brea
 
 - **ShiroCore**: This plugin requires [ShiroCore](https://modrinth.com/plugin/shirocore/version/latest) to be installed.
 
-| Version | ShoCore Version | Required |
-|---|---|---|
-| Superpickaxe Prototype 1.21.10-1.1.1 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | true |
-| Superpickaxe Prototype 1.21.10-1.1.0 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | true |
-| Superpickaxe Prototype 1.21.10-1.0.4 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | true |
-| superpickaxe-prototype 1.21.10-1.0.2| [ShiroCore 1.21.10-1.0.3](https://modrinth.com/plugin/shirocore/version/1.21.10-1.0.3) | true |
+- **Resource Pack**: [Download Resource Pack](https://github.com/tantaihaha4487/SuperPickaxeMod/releases/download/v1.21.11-1.0.2/SuperPickaxe_ResourcePack.zip)
+  > ⚠️ Without the resource pack, Super Pickaxes will use default vanilla pickaxe textures.
+
+| Version | ShiroCore Version | Required | Support Resource Pack | Resource Pack Required |
+|---|---|---|---|---|
+| Superpickaxe Prototype 1.21.10-1.1.1-RP-required | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | ✅ | ✅ | ✅ |
+| Superpickaxe Prototype 1.21.10-1.1.1 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | ✅ | ❌ | ❌ |
+| Superpickaxe Prototype 1.21.10-1.1.0 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | ✅ | ❌ | ❌ |
+| Superpickaxe Prototype 1.21.10-1.0.4 | [ShiroCore 1.21.10-2.0.1](https://modrinth.com/plugin/shirocore/version/DErUL76Z) | ✅ | ❌ | ❌ |
+| superpickaxe-prototype 1.21.10-1.0.2 | [ShiroCore 1.21.10-1.0.3](https://modrinth.com/plugin/shirocore/version/1.21.10-1.0.3) | ✅ | ❌ | ❌ |
 
 
 ## Mine!
